@@ -1,0 +1,502 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{lastpage}
+\usepackage{hyperref}
+\usepackage{mathtools}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\curs}{\mathcal}
+\renewcommand{\u}{{\bf u}}
+\renewcommand{\v}{{\bf v}}
+\newcommand{\w}{{\bf w}}
+\newcommand{\x}{{\bf x}}
+\renewcommand{\b}{{\bf b}}
+\newcommand{\dsum}{\displaystyle \sum}
+\newcommand{\dint}{\displaystyle \int}
+\newcommand{\tr}{\textcolor{red}}
+\newcommand{\tb}{\textcolor{blue}}
+\newcommand{\tv}{\textcolor{violet}}
+\newcommand{\tm}{\textcolor{magenta}}
+\newcommand{\tor}{\textcolor{orange}}
+
+\newcommand{\too}{\xrightarrow{\hspace*{1.5cm}}}
+\newcommand{\zero}{\mbox{$\overrightarrow{\mathbf{0}}$}}
+
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+
+\newcommand{\lp}{\left(}
+\newcommand{\rp}{\right)}
+
+\theoremstyle{definition}
+\newtheorem{question}{Question}
+
+\pagestyle{fancy}
+
+\fancyfoot{}
+
+\lhead{\small Math 4100 PMWA Homework 3}
+\chead{\small Fall Semester 2023}
+\rhead{\small Page \thepage \ of \pageref{LastPage}}
+
+\renewcommand{\qedsymbol}{\(\blacksquare\)}
+\newcommand{\vt}[1]{\textbf{\textit{#1}}}
+\newcommand{\0}{\textbf{0}}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+
+\noindent {\bf \Large Math 4100 Homework $\mathbf{\#4 / \#5}$} \hfill {\bf \large Name: Yaohui Wu}
+
+\vspace{1cm}
+
+\noindent {\Large \bf Instructions:} Show {\bf ALL} of your work! Explain your reasoning using complete sentences and correct grammar, spelling, and punctuation. Course notes, textbooks, etc. are allowed. 
+
+\vspace{.25cm}
+
+\noindent This is due at {\bf 10:00 PM on Monday, December 11}! Late submissions will be accepted until {\bf 5:00 PM on Wednesday, December 13}.
+
+\vspace{.25cm}
+
+\noindent You may use LaTeX to type the answers. If you use Latex, upload your .tex file along with the PDF output.
+
+\vspace{.25cm}
+
+\noindent If you choose not to use LaTeX, write your answers {\bf legibly} on perforated paper or loose leaf paper. 
+
+\vspace{.25cm}
+
+\noindent You {\bf \large MUST} attach this sheet as the first page of your solutions.
+
+\vspace{.25cm}
+
+\noindent Put your EMPLID on each page.
+
+\vspace{.25cm}
+
+\noindent {\bf Solutions MUST be in the proper numerical order!} You must make a PDF scan of your work (include the cover page as the first page) as a single PDF file.
+
+\vspace{.25cm}
+
+\noindent The work {\bf must} be submitted on Dropbox: \href{https://www.dropbox.com/request/zejLlEefwDvv10GFesXG}{https://www.dropbox.com/request/zejLlEefwDvv10GFesXG}
+
+\vspace{.25cm}
+
+\noindent If you use any resources other than your textbook, {\bf cite the source!}
+
+\vspace{.25cm}
+
+\noindent {\bf Justify your answers!}
+
+\vspace{1.5cm}
+
+
+
+\begin{center}
+
+{\renewcommand{\arraystretch}{2.5}
+\begin{tabular}{|c|c|c|}
+\hline
+Question & \ Possible Points \ & \ \ \ Score \ \ \ \\
+\hline 
+
+1 & 5 & \\
+\hline 
+
+2 & 5 & \\
+\hline
+
+3 & 5 & \\
+\hline
+
+4 & 5 & \\
+\hline 
+
+5 & 5 & \\
+\hline
+
+Total & 25 & \\
+\hline
+
+\end{tabular}}
+
+\end{center}
+
+
+\newpage \label{Question 1}
+
+
+%Question 1
+
+\begin{question} For each of the following statements, prove the statement (showing all steps), or find a counterexample.
+
+\vspace{.25cm}
+
+\begin{enumerate}
+
+\item[{\bf (a)}] Let $V$ be a vector space. Let $\v, \v_1,\v_2,\v_3\in V$. Suppose that $\v \not\in \mathrm{span}\left\{\v_1,\v_2\right\}$ and $\v \not\in \mathrm{span}\left\{\v_1,\v_3\right\}$ and $\v \not\in \mathrm{span}\left\{\v_2,\v_3\right\}$. Then, $\v \not\in \mathrm{span}\left\{\v_1,\v_2,\v_3\right\}$.
+
+% Question 1(a) solution.
+\begin{proof}[Solution]
+    Suppose the statement is true, let \(\vt{v}=a_1\vt{v}_1+a_2\vt{v}_2+a_3\vt{v}_3\) for non-zero scalars \(a_1, a_2, a_3\).
+    If \(\vt{v}_1, \vt{v}_2, \vt{v}_3\) are linearly independent then \(\dim(\mathrm{span}\{\vt{v}_1, \vt{v}_2, \vt{v}_3\})=3\).
+    It follows that \(\vt{v}\not\in\mathrm{span}\{\vt{v}_1, \vt{v}_2\}\) because \(\dim(\mathrm{span}\{\vt{v}_1, \vt{v}_2\})=2\).
+    Similarly, \(\vt{v}\not\in\mathrm{span}\{\vt{v}_2, \vt{v}_3\}\) and \(\vt{v}\not\in\mathrm{span}\{\vt{v}_1, \vt{v}_3\}\).
+    However, \(\vt{v}\in\mathrm{span}\{\vt{v}_1, \vt{v}_2, \vt{v}_3\}\) and this is a contradiction.
+    Therefore, it is proved that the statement is false.
+\end{proof}
+
+\vspace{.25cm}
+
+\item[{\bf (b)}] Suppose that $A$ and $B$ are $n\times n$ matrices with $A = CBC^{-1}$ for some invertible matrix $C$. Then, $rk(A) = rk(B)$.
+
+% Question 1(b) solution.
+\begin{proof}[Solution]
+    Since elementary row operations do not change the row space, we have
+    \[\mathrm{rowsp}(A)=\mathrm{rowsp}(CBC^{-1})=\mathrm{rowsp}(CB)=\mathrm{rowsp}(B).\]
+    From the definition of the rank of a matrix we have
+    \[rank(A)=\dim(\mathrm{colsp}(A))=\dim(\mathrm{rowsp}(A))=\dim(\mathrm{rowsp}(B))=rank(B).\]
+    Therefore, it is proved that the statement is true.
+\end{proof}
+
+\vspace{.25cm}
+
+\item[{\bf (c)}] Suppose $A$ and $B$ are $n\times n$ matrices and that $\lambda$ is an eigenvalue for both $A$ and $B$. Then, $\lambda$ is an eigenvalue for $A+B$.
+
+% Question 1(c) solution.
+\begin{proof}[Solution]
+    Let \(\vt{u}\) be an eigenvector of \(A\) and \(\vt{v}\) be eigenvector of \(B\). We have
+    \begin{align*}
+        A\vt{u}+B\vt{v} &= \lambda\vt{u}+\lambda\vt{v} \\
+        A\vt{u}+B\vt{v} &= \lambda(\vt{u}+\vt{v}).
+    \end{align*} If \(\vt{u}\neq\vt{v}\) then \(\lambda\) is not an eigenvalue of \(A+B\).
+    Therefore, it is proved that the statement is false.
+\end{proof}
+\vspace{.25cm}
+
+\item[{\bf (d)}] Suppose $A$ and $B$ are $n\times n$ matrices and that $\v$ is an eigenvector for both $A$ and $B$. Then, $\v$ is an eigenvector for $A+B$.
+
+% Question 1(d) solution.
+\begin{proof}[Solution]
+    Let \(\lambda_1\) be an eigenvalue of \(A\) and \(\lambda_2\) be an eigenvalue of \(B\).
+    We have
+    \begin{align*}
+        A\vt{v}+B\vt{v} &= \lambda_1\vt{v} + \lambda_2\vt{v} \\
+        (A+B)\vt{v} &= (\lambda_1+\lambda_2)\vt{v}.
+    \end{align*}
+    Therefore, it is proved that the statement is true.
+\end{proof}
+
+\vspace{.25cm}
+
+\item[{\bf (e)}] Suppose that $A$ and $B$ are $n\times n$ matrices with $A = CBC^{-1}$ for some invertible matrix $C$. If $\lambda$ is an eigenvalue for $B$, then $\lambda$ is an eigenvalue for $A$.
+
+% Question 1(e) solution.
+\begin{proof}[Solution]
+    Let \(\vt{v}\) be an eigenvector of \(B\). We have
+    \begin{align*}
+        AC &= CB \\
+        AC\vt{v} &= CB\vt{v} \\
+        AC\vt{v} &= C(\lambda\vt{v}) \\
+        A(C\vt{v}) &= \lambda (C\vt{v}).
+    \end{align*}
+    Therefore, it is proved that the statement is true.
+\end{proof}
+
+\end{enumerate}
+
+\end{question}
+
+
+
+
+
+\vspace{.75cm}
+
+\label{Question 2}
+
+
+%Question 2
+
+\begin{question} It can be shown that the eigenvalues of a real symmetric matrix are real numbers. A symmetric matrix whose eigenvalues are all positive is called a {\bf positive definite} matrix. Determine if the following matrix is positive definite: \[A = \left[\begin{array}{rrr} 10 & -4 & -1 \\ -4 & 10 & -1 \\ -1 & -1 & 7 \end{array}\right]\] {\bf Hint:} One of the eigenvalues of this matrix is $\lambda = 8$.
+
+% Question 2 solution.
+\begin{proof}[Solution]
+    If \(\lambda\) is an eigenvalue of \(A\) then we have
+    \[A-\lambda I = 
+    \begin{bmatrix}
+        10-\lambda & -4 & 1 \\
+        -4 & 10-\lambda & -1 \\
+        -1 & -1 & 7-\lambda
+    \end{bmatrix}\]
+    so that \(\det(A-\lambda I)=0\). Then we use cofactor expansion along row 1 to get
+    \begin{align*}
+        \det(A-\lambda I) &= (10-\lambda)[(10-\lambda)(7-\lambda)-1]-(-4)[(-4)(7-\lambda)-1]+4-10+\lambda \\
+        &= (10-\lambda)^2(7-\lambda)+18\lambda-140 \\
+        &= -\lambda^3+27\lambda^2-222\lambda+560.
+    \end{align*} It follows that
+    \begin{align*}
+        -\lambda^3+27\lambda^2-222\lambda+560 &= 0 \\
+        \lambda^3-27\lambda^2+222\lambda-560 &= 0 \\
+        (\lambda^2-13\lambda+40)(\lambda-14) &= 0 \\
+        (\lambda-5)(\lambda-8)(\lambda-14) &= 0.
+    \end{align*} The eigenvalues of \(A\) are
+    \[\lambda_1=5, \lambda_2=8, \lambda_3=14.\]
+    The eigenvalues of \(A\) are all positive so \(A\) is a positive definite matrix.
+\end{proof}
+
+\end{question}
+
+
+
+
+
+
+\vspace{.75cm}
+
+\label{Question 3}
+
+
+%Question 3
+
+\begin{question} Suppose that $A$ and $B$ are $3\times 3$ matrices such that $A = CBC^{-1}$ where \[C = \left[\ra{1.25}\begin{array}{ccc} 3 & 5 & 1 \\ 7 & 2 & 4 \\ 5 & 1 & 8 \end{array}\right]\] Suppose that $\v = (6,11,-4)^T$ is an eigenvector for $B$ with eigenvalue $\lambda = -5$. Let $\w = C\v$. Compute $A\w$.
+
+% Question 3 solution.
+\begin{proof}[Solution]
+    We have
+    \begin{align*}
+        A\vt{w} &= CBC^{-1}C\vt{v} \\
+        &= CB\vt{v} \\
+        &= C(-5)\vt{v} \\
+        &= (-5)C\vt{v} \\
+        &= -5\begin{bmatrix}
+            3 & 5 & 1 \\
+            7 & 2 & 4 \\
+            5 & 1 & 8
+          \end{bmatrix}\begin{bmatrix}
+            6 \\ 11 \\ -4
+          \end{bmatrix} \\
+        &= -5\begin{bmatrix}
+            69 \\ 48 \\ 9
+        \end{bmatrix} \\
+        &= \begin{bmatrix}
+            -345 \\ -240 \\ -45
+        \end{bmatrix}.
+    \end{align*}
+\end{proof}
+
+\end{question}
+
+
+
+
+
+\vspace{.75cm}
+
+\label{Question 4}
+
+%Question 4
+
+\begin{question} Suppose that $A$ is an $n\times n$ matrix such that $A^3 + 3A^2 + A = 5I_n$. Find all possible complex eigenvalues for $A$.
+
+% Question 4 solution.
+\begin{proof}[Solution]
+    Let \(\lambda\in\C\) be an eigenvalue of \(A\) and \(\vt{v}\) be an eigenvector of \(A\).
+    We have
+    \begin{align*}
+        (A^3+3A^2+A-5I)\vt{v} &= \0 \\
+        A^3\vt{v}+3A^2\vt{v}+A\vt{v}-5\vt{v} &= \0 \\
+        \lambda A^2\vt{v}+3\lambda A\vt{v}+\lambda\vt{v}-5\vt{v} &= \0 \\
+        \lambda^3\vt{v}+3\lambda^2\vt{v}+\lambda\vt{v}-5\vt{v} &= \0 \\
+        (\lambda^3+3\lambda^2+\lambda-5)\vt{v} &= \0 \\
+        \lambda^3+3\lambda^2+\lambda-5 &= 0 \\
+        (\lambda-1)(\lambda^2+4\lambda+5) &= 0.
+    \end{align*} It follows that
+    \begin{align*}
+        \lambda = 1
+    \end{align*} or
+    \begin{align*}
+        \lambda^2+4\lambda+5 &= 0 \\
+        \lambda^2+4\lambda+4+5 &= 4 \\
+        (\lambda+2)^2 &= -1 \\
+        \lambda+2 &= \pm\sqrt{-1} \\
+        \lambda &= -2\pm i.
+    \end{align*}
+    Therefore, the eigenvalues of \(A\) are
+    \[\lambda_1=1, \lambda_2=-2+i,\lambda_3=-2-i.\]
+\end{proof}
+
+\end{question}
+
+
+
+
+\vspace{.75cm}
+
+\label{Question 5}
+
+%Question 5
+
+\begin{question} For the following $2\times 2$ matrix $A$, find a diagonal matrix $D$ and an invertible matrix $C$ such that $A = CDC^{-1}$: \[A = \left[\ra{1.25}\begin{array}{rr} 5 & 4 \\ 4 & -1 \end{array}\right]\]
+
+% Question 5 solution.
+\begin{proof}[Solution]
+    Let \(C=\begin{bmatrix}
+        a & b \\
+        c & d
+    \end{bmatrix}\), \(D=\begin{bmatrix}
+        x & 0 \\
+        0 & y
+    \end{bmatrix}\) where \(C,D\in\R^{2\times 2}\) so we have
+    \begin{align*}
+        AC &= CD \\
+        \begin{bmatrix}
+            5 & 4 \\
+            4 & -1
+        \end{bmatrix}
+        \begin{bmatrix}
+            a & b \\
+            c & d
+        \end{bmatrix}
+        &= \begin{bmatrix}
+            a & b \\
+            c & d
+        \end{bmatrix}
+        \begin{bmatrix}
+            x & 0 \\
+            0 & y
+        \end{bmatrix}.
+    \end{align*}
+    Then we have
+    \[\begin{dcases}
+        \begin{bmatrix}
+            5 & 4 \\
+            4 & -1
+        \end{bmatrix}
+        \begin{bmatrix}
+            a \\ c
+        \end{bmatrix} = x
+        \begin{bmatrix}
+            a \\ c
+        \end{bmatrix} \\
+        \begin{bmatrix}
+            5 & 4 \\
+            4 & -1
+        \end{bmatrix}
+        \begin{bmatrix}
+            b \\ d
+        \end{bmatrix} = y
+        \begin{bmatrix}
+            b \\ d
+        \end{bmatrix}
+    \end{dcases}\] and we have
+    \begin{align*}
+        A\vt{v}_1 &= \lambda_1\vt{v}_1 \\
+        A\vt{v}_2 &= \lambda_2\vt{v}_2
+    \end{align*}
+    for eigenvalues \(\lambda_1, \lambda_2\) and eigenvectors \(\vt{v}_1, \vt{v}_2\).
+    Now let
+    \[A-\lambda I=\begin{bmatrix}
+        5-\lambda & 4 \\
+        4 & -1-\lambda
+    \end{bmatrix}\]
+    so that
+    \begin{align*}
+        \det(A-\lambda I) &= (5-\lambda)(-1-\lambda)-16 \\
+        &= \lambda^2-4\lambda-21.
+    \end{align*}
+    Since \(\det(A-\lambda I)=0\) then we solve for \(\lambda\)
+    \begin{align*}
+        \lambda^2-4\lambda-21 &= 0 \\
+        \lambda^2-4+4 &= 25 \\
+        (\lambda-2)^2 &= 25 \\
+        \lambda &\in \{-3, 7\}
+    \end{align*}
+    The eigenvalues are \[\lambda_1=-3, \lambda_2=7\] and we have
+    \begin{align*}
+        (A+3I)\vt{v}_1 &= \0 \\
+        (A-7I)\vt{v}_2 &= \0.
+    \end{align*}
+    Now we use elementary row operations to get RREF and solve for \(\vt{v}_1\)
+    \begin{align*}
+        A+3I &=
+        \begin{bmatrix}
+            8 & 4 \\
+            4 & 2
+        \end{bmatrix} \\
+        \xrightarrow{\frac{1}{8}R_1} &=
+        \begin{bmatrix}
+            1 & \frac{1}{2} \\
+            4 & 2
+        \end{bmatrix} \\
+        \xrightarrow{R_2-4R_1} &=
+        \begin{bmatrix}
+            1 & \frac{1}{2} \\
+            0 & 0
+        \end{bmatrix} \\
+        x_2 &= s, s\in\R \\
+        x_1 &= -\frac{1}{2}s \\
+        \vt{v}_1 &=
+        \begin{bmatrix}
+            -\frac{1}{2}s \\ s
+        \end{bmatrix}.
+    \end{align*}
+    Similarly, we solve for \(\vt{v}_2\)
+    \begin{align*}
+        A-7I &=
+        \begin{bmatrix}
+            -2 & 4 \\
+            4 & -8
+        \end{bmatrix} \\
+        \xrightarrow{-\frac{1}{2}R_1} &=
+        \begin{bmatrix}
+            1 & -2 \\
+            4 & -8
+        \end{bmatrix} \\
+        \xrightarrow{R_2-4R_1} &=
+        \begin{bmatrix}
+            1 & -2 \\
+            0 & 0
+        \end{bmatrix} \\
+        x_2 &= t, t\in\R \\
+        x_1 &= 2t \\
+        \vt{v}_2 &=
+        \begin{bmatrix}
+            2t \\ t
+        \end{bmatrix}.
+    \end{align*}
+    Therefore, we showed that
+    \begin{align*}
+        D &=
+        \begin{bmatrix}
+            -3 & 0 \\
+            0 & 7
+        \end{bmatrix} \\
+        C &=
+        \begin{bmatrix}
+            -\frac{1}{2}s & 2t \\
+            s & t
+        \end{bmatrix}.
+    \end{align*}
+\end{proof}
+
+\end{question}
+
+
+
+
+\end{document}

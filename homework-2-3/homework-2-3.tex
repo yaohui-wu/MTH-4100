@@ -1,0 +1,499 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{lastpage}
+\usepackage{hyperref}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\curs}{\mathcal}
+\renewcommand{\u}{{\bf u}}
+\renewcommand{\v}{{\bf v}}
+\newcommand{\w}{{\bf w}}
+\newcommand{\x}{{\bf x}}
+\renewcommand{\b}{{\bf b}}
+\newcommand{\dsum}{\displaystyle \sum}
+\newcommand{\dint}{\displaystyle \int}
+\newcommand{\tr}{\textcolor{red}}
+\newcommand{\tb}{\textcolor{blue}}
+\newcommand{\tv}{\textcolor{violet}}
+\newcommand{\tm}{\textcolor{magenta}}
+\newcommand{\tor}{\textcolor{orange}}
+
+\newcommand{\too}{\xrightarrow{\hspace*{1.5cm}}}
+\newcommand{\zero}{\mbox{$\overrightarrow{\mathbf{0}}$}}
+
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+
+\newcommand{\lp}{\left(}
+\newcommand{\rp}{\right)}
+
+\renewcommand{\qedsymbol}{\(\blacksquare\)}
+
+\theoremstyle{definition}
+\newtheorem{question}{Question}
+
+\pagestyle{fancy}
+
+\fancyfoot{}
+
+\lhead{\small Math 4100 PMWA Homework 2$\&$3}
+\chead{\small Fall Semester 2023}
+\rhead{\small Page \thepage \ of \pageref{LastPage}}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+
+\noindent {\bf \Large Math 4100 Homework $\mathbf{\#2\&3}$} \hfill {\bf \large Name: Yaohui Wu}
+
+\vspace{1cm}
+
+\noindent {\Large \bf Instructions:} Show {\bf ALL} of your work! Explain your reasoning using complete sentences and correct grammar, spelling, and punctuation. Course notes, textbooks, etc. are allowed. 
+
+\vspace{.25cm}
+
+\noindent This is due at {\bf 5:00 PM on Friday, November 10}!
+
+\vspace{.25cm}
+
+\noindent You may use LaTeX to type the answers. If you use Latex, upload your .tex file along with the PDF output.
+
+\vspace{.25cm}
+
+\noindent If you choose not to use LaTeX, write your answers {\bf legibly} on perforated paper or loose leaf paper. 
+
+\vspace{.25cm}
+
+\noindent You {\bf \large MUST} attach this sheet as the first page of your solutions.
+
+\vspace{.25cm}
+
+\noindent Put your EMPLID on each page.
+
+\vspace{.25cm}
+
+\noindent {\bf Solutions MUST be in the proper numerical order!} You must make a PDF scan of your work (include the cover page as the first page) as a single PDF file.
+
+\vspace{.25cm}
+
+\noindent The work {\bf must} be submitted on Dropbox: \href{https://www.dropbox.com/request/oycXLwSWqV3W6qolkPOq}{https://www.dropbox.com/request/oycXLwSWqV3W6qolkPOq}
+
+\vspace{.25cm}
+
+\noindent If you use any resources other than your textbook, {\bf cite the source!}
+
+\vspace{.25cm}
+
+\noindent {\bf Justify your answers!}
+
+\vspace{1.5cm}
+
+
+
+\begin{center}
+
+{\renewcommand{\arraystretch}{2.5}
+\begin{tabular}{|c|c|c|}
+\hline
+Question & \ Possible Points \ & \ \ \ Score \ \ \ \\
+\hline 
+
+1 & 4 & \\
+\hline 
+
+2 & 4 & \\
+\hline
+
+3 & 6 & \\
+\hline
+
+4 & 6 & \\
+\hline 
+
+Total & 20 & \\
+\hline
+
+\end{tabular}}
+
+\end{center}
+
+
+\newpage \label{Question 1}
+
+
+%Question 1
+
+\begin{question} For each of the following statements, prove the statement (showing all steps), or find a counterexample.
+
+\vspace{.25cm}
+
+\begin{enumerate}
+
+\item[{\bf (a)}] If $A$ and $B$ are $n\times n$ matrices, then $\det(A+B) = \det(A) + \det(B)$.
+
+% Question 1(a) solution.
+\begin{proof}[Solution]
+    The statement is false. Suppose the statement is true, let \(A\) be a \(2\times2\) matrix \(A=
+    \begin{bmatrix}
+        1 & 0 \\
+        0 & 0
+    \end{bmatrix}\) and let \(B\) be a \(2\times2\) matrix \(B=
+    \begin{bmatrix}
+        0 & 0 \\
+        0 & 1
+    \end{bmatrix}\). Thus, we have \(\det(A)=0\) and \(\det(B)=0\).
+    Then we know that \(A+B=
+    \begin{bmatrix}
+        1 & 0 \\
+        0 & 1
+    \end{bmatrix}\) and \(\det(A+B)=1\). Since \(\det(A)+\det(B)=0+0=0\) so \(\det(A+B)\neq\det(A)+\det(B)\)
+    and this is a contradiction. Therefore, it is proved that the statement is false.
+\end{proof}
+
+\vspace{.25cm}
+
+\item[{\bf (b)}] If $A$ is a non-zero $n\times n$ matrix with real number entries, then $\det(AA^T) > 0$.
+
+% Question 1(b) solution.
+\begin{proof}[Solution]
+    The statement is false. Suppose the statement is true, let \(A\) be a \(2\times2\) matrix \(A=
+    \begin{bmatrix}
+        1 & 1 \\
+        0 & 0
+    \end{bmatrix}\) so that we have \(\det(A)=0\). Thus, we have \(A^T=
+    \begin{bmatrix}
+        1 & 0 \\
+        1 & 0
+    \end{bmatrix}\) and \(\det(A^T)=0\). Since \(\det(AA^T)=\det(A)\times\det(A^T)=0\times0=0\) so \(\det(AA^T)\ngtr0\) but this is a contradiction.
+    Therefore, it is proved that the statement is false.
+\end{proof}
+
+\vspace{.25cm}
+
+\item[{\bf (c)}] Suppose that $C$ is an invertible $n\times n$ matrix. If $A$ and $B$ are $n\times n$ matrices such that $AC = CB$, then $\det(A) = \det(B)$.
+
+% Question 1(c) solution.
+\begin{proof}[Solution]
+    The statement is true. Given \(C\) is invertible and \(AC=CB\) then we know that
+    \begin{align*}
+        ACC^{-1} &= CBC^{-1} \\
+        AI &= CBC^{-1} \\
+        A &= CBC^{-1}
+    \end{align*}
+    It follows that
+    \begin{align*}
+        \det(A)
+        &= \det(CBC^{-1}) \\
+        &= \det(C)\times\det(B)\times\det(C^{-1}) \\
+        &= \det(C)\times\det(C^{-1})\times\det(B) \\
+        &= \det(C)\times(\det(C))^{-1}\times\det(B) \\
+        &= \det(B)
+    \end{align*}
+    Therefore, it is proved that if \(A\), \(B\), and \(C\) are \(n \times n\)
+    matrices, and \(C\) is invertible such that \(AC=CB\), then \(\det(A)=\det(B)\).
+\end{proof}
+
+\vspace{.25cm}
+
+\item[{\bf (d)}] Suppose that $A\in\curs{M}_{n,n}(\C)$ is an $n\times n$ matrix, and $\v \in \C^n$ satisfies $A\v = \lambda\v$ for some $\lambda\in\C$. Then, $A^3 - \lambda^3I_n$ is non-invertible.
+
+% Question 1(d) solution.
+\begin{proof}[Solution]
+    The statement is false. Let \(\textbf{\textit{v}}=\textbf{0}\) be the only solution to
+    \(A\textbf{\textit{v}}=\lambda\textbf{\textit{v}}\) and let \(\lambda =0\) such that
+    \(A^3-\lambda^3 I=A^3\). By definition \(A\) is non-invertible if and only if
+    there exists a \(\textbf{\textit{v}}\neq0\) such that \(A\textbf{\textit{v}}=\lambda\textbf{\textit{v}}\).
+    Since \(\textbf{\textit{v}}=\textbf{0}\) is the only solution to \(A\textbf{\textit{v}}=\lambda\textbf{\textit{v}}\)
+    so that \(A\) is invertible and \(\det(A)\neq0\). It follows that
+    \begin{align*}
+        \det(A^3-\lambda^3 I)
+        &= \det(A^3) \\
+        &= (\det(A))^3
+    \end{align*}
+    If \(\det(A)\neq0\) then \((\det(A))^3\neq0\) so \(\det(A^3-\lambda^3 I)\neq0\)
+    and \(A^3-\lambda^3 I\) is invertible. Therefore, it is proved that the
+    statement is false.
+\end{proof}
+
+\end{enumerate}
+
+\end{question}
+
+
+
+
+
+\vspace{.75cm}
+
+\label{Question 2}
+
+
+%Question 2
+
+\begin{question} For each of the following, find examples of $3\times 3$ matrices $A$ and $B$ satisfying the property. Show that the matrices you give satisfy the given property.
+
+\vspace{.25cm}
+
+\begin{enumerate}
+
+\item[\textbf{(a)}] $\det(A) < 0$, $\det(B) < 0$, $\det(A+B) > 0$
+
+% Question 2(a) solution.
+\begin{proof}[Solution]
+    Let \(A\) be the matrix \(A=
+    \begin{bmatrix}
+        2 & 0 & 0 \\
+        0 & 1 & 0 \\
+        0 & 0 & -1
+    \end{bmatrix}\)
+    and let \(B\) be the matrix \(B=
+    \begin{bmatrix}
+        -1 & 0 & 0 \\
+        0 & 1 & 0 \\
+        0 & 0 & 2
+    \end{bmatrix}\). Since \(A\) and \(B\) are both upper and lower triangular, we have
+    \(\det(A)=2\times1\times(-1)=-2\) and \(\det(B)=(-1)\times1\times2=-2\).
+    Then, we have \(A+B=
+    \begin{bmatrix}
+        1 & 0 & 0 \\
+        0 & 2 & 0 \\
+        0 & 0 & 1
+    \end{bmatrix}\) and it is upper and lower triangular so that \(\det(A+B)=1\times2\times1=2\).
+    Therefore, it is proved that \(A\) and \(B\) satisfies \(\det(A)<0\),
+    \(\det(B)<0\), and \(\det(A+B)>0\).
+\end{proof}
+
+\vspace{.25cm}
+
+\item[\textbf{(b)}] $\det(A) > 0$, $\det(B) > 0$, $\det(A+B) = 0$.
+
+% Question 2(b) solution.
+\begin{proof}[Solution]
+    Let \(A\) be the matrix \(A=
+    \begin{bmatrix}
+        1 & 0 & 0 \\
+        0 & 1 & 0 \\
+        0 & 0 & 1
+    \end{bmatrix}\)
+    and let \(B\) be the matrix \(B=
+    \begin{bmatrix}
+        1 & 0 & 0 \\
+        0 & -1 & 0 \\
+        0 & 0 & -1
+    \end{bmatrix}\) so that we have \(A+B=
+    \begin{bmatrix}
+        2 & 0 & 0 \\
+        0 & 0 & 0 \\
+        0 & 0 & 0
+    \end{bmatrix}\). Then we have \(A=I\) so that \(\det(A)=\det(I)=1\),
+    \(\det(B)=1\times(-1)\times(-1)=1\), and \(\det(A+B)=2\times0\times0=0\).
+    Therefore, it is proved that \(A\) and \(B\) satisfies \(\det(A)>0\),
+    \(\det(B)>0\), and \(\det(A+B)=0\).
+\end{proof}
+
+\vspace{.25cm}
+
+\item[\textbf{(c)}] $\det(A) > 0$, $\det(B) = 0$, $\det(A+B) < 0$.
+
+% Question 2(c) solution.
+\begin{proof}[Solution]
+    Let \(A\) be the matrix \(A=
+    \begin{bmatrix}
+        1 & 0 & 0 \\
+        0 & 1 & 0 \\
+        0 & 0 & 1
+    \end{bmatrix}\)
+    and let \(B\) be the matrix \(B=
+    \begin{bmatrix}
+        -2 & 0 & 0 \\
+        0 & 0 & 0 \\
+        0 & 0 & 0
+    \end{bmatrix}\) such that we have \(A+B=
+    \begin{bmatrix}
+        -1 & 0 & 0 \\
+        0 & 1 & 0 \\
+        0 & 0 & 1
+    \end{bmatrix}\). It follows that \(\det(A)=1\), \(\det(B)=-2\times0\times0=0\)
+    and \(\det(A+B)=(-1)\times1\times1=-1\). Therefore, it is proved that
+    \(A\) and \(B\) satisfies \(\det(A)>0\), \(\det(B)=0\), and \(\det(A+B)<0\).
+\end{proof}
+
+\vspace{.25cm}
+
+\item[\textbf{(d)}] $\det\lp A^2+B^2\rp < 0$.
+
+% Question 2(d) solution.
+\begin{proof}[Solution]
+    Let \(A\) be the matrix \(A=
+    \begin{bmatrix}
+        i & 0 & 0 \\
+        0 & 1 & 0 \\
+        0 & 0 & 1
+    \end{bmatrix}\) where we defined \(i\) as \(i^2=-1\)
+    such that \(A^2=
+    \begin{bmatrix}
+        -1 & 0 & 0 \\
+        0 & 1 & 0 \\
+        0 & 0 & 1
+    \end{bmatrix}\).
+    Let \(B\) be the matrix \(B=
+    \begin{bmatrix}
+        0 & 0 & 0 \\
+        0 & 1 & 0 \\
+        0 & 0 & 0
+    \end{bmatrix}\) such that \(B^2=
+    \begin{bmatrix}
+        0 & 0 & 0 \\
+        0 & 1 & 0 \\
+        0 & 0 & 0
+    \end{bmatrix}\). Then we have \(A^2+B^2=
+    \begin{bmatrix}
+        -1 & 0 & 0 \\
+        0 & 2 & 0 \\
+        0 & 0 & 1
+    \end{bmatrix}\) and \(\det(A^2+B^2)=-1\times2\times1=-2\).
+    Therefore, it is proved that \(A\) and \(B\) satisfies \(\det(A^2+B^2)<0\).
+\end{proof}
+
+\end{enumerate}
+
+\end{question}
+
+
+
+
+
+
+\vspace{.75cm}
+
+\label{Question 3}
+
+
+%Question 3
+
+\begin{question} Let $A$ be the following $3\times 3$ matrix: \[A = \ra{1.25}\left[\begin{array}{rrr} 4 & 3 & 7 \\ 5 & 1 & 4 \\ 7 & -2 & 9 \end{array}\right]\] Suppose that $B$ is an upper triangular matrix \[B = \ra{1.25}\left[\begin{array}{ccc} a & b & c \\ 0 & d & f \\ 0 & 0 & g \end{array}\right]\] such that $AC = CB$ for some \textbf{invertible} matrix $C$. Compute the value $adg$.
+
+\end{question}
+
+% Question 3 solution.
+\begin{proof}[Solution]
+    We know that
+    \begin{align*}
+        ACC^{-1} &= CBC^{-1} \\
+        AI &= CBC^{-1} \\
+        A &= CBC^{-1}
+    \end{align*}
+    such that
+    \begin{align*}
+        \det(A)
+        &= \det(CBC^{-1}) \\
+        &= \det(C)\times\det(B)\times\det(C^{-1}) \\
+        &= \det(C)\times\det(C^{-1})\times\det(B) \\
+        &= \det(C)\times(\det(C))^{-1}\times\det(B) \\
+        &= \det(B)
+    \end{align*}
+    Since \(B\) is upper triangular so \(\det(A)=\det(B)=a\times d \times g\).
+    Note that for any \(n \times n\) matrix \(A\), we can compute \(\det(A)\) by cofactor expansion.
+    Let \(a_{ij}\) be the entry at row \(i\) and column \(j\) of \(A\).
+    Let \(M_{ij}\) be a \((n-1)\times(n-1)\) submatrix given by removing row \(i\) and column \(j\) of \(A\)
+    such that the \(\det(M_{ij})\) is the (\(i\), \(j\)) minor of \(A\).
+    Let \(C_{ij}=(-1)^{i+j}\det(M_{ij})\) be the (\(i\), \(j\)) cofactor of \(A\).
+    The cofactor expansion along row \(i\) where \(1\leq i\leq n\) is
+    \begin{align*}
+        \det(A) &= \sum_{j=1}^{n} a_{ij}C_{ij} \\
+        &= \sum_{j=1}^{n} a_{ij}(-1)^{i+j}\det(M_{ij}) \\
+        &= a_{i1}(-1)^{i+1}\det(M_{i1}) + a_{i2}(-1)^{i+2}\det(M_{i2})
+        + \dots + a_{in}(-1)^{i+n}\det(M_{in})
+    \end{align*}
+    Then we compute \(\det(A)\) using cofactor expansion along row \(1\).
+    \begin{align*}
+        \det(A) &= \sum_{j=1}^{3} a_{1j}C_{1j} \\
+        &= a_{11}(-1)^{1+1}\det(M_{11}) + a_{12}(-1)^{1+2}\det(M_{12})
+        + a_{13}(-1)^{1+3}\det(M_{13}) \\
+        &= 4 \begin{vmatrix}
+            1 & 4 \\
+            -2 & 9
+          \end{vmatrix}
+        - 3 \begin{vmatrix}
+            5 & 4 \\
+            7 & 9
+          \end{vmatrix}
+        + 7 \begin{vmatrix}
+            5 & 1 \\
+            7 & -2
+          \end{vmatrix} \\
+        &= 4[1\times9-4\times(-2)] - 3[5\times9-4\times7] + 7[5\times(-2) - 1\times7] \\
+        &= 4(17)-3(17)+7(-17) \\
+        &= (4-3-7)17 \\
+        &= -102
+    \end{align*}
+    Therefore, it is proved that \(\det(A)=\det(B)=a\times d\times g=-102\).
+\end{proof}
+
+
+
+
+
+
+\vspace{.75cm}
+
+\label{Question 4}
+
+%Question 4
+
+\begin{question} Suppose that $B$ is the following matrix: \[B = \ra{1.25}\left[\begin{array}{ccc} 9 & 5 & 2 \\ 5 & 3 & 4 \\ 2 & 4 & 2 \end{array}\right]\] \textbf{Use determinants} to prove that there is no $3\times 3$ matrix $A$ {\it with real number entries} such that $B = AA^T$.
+
+\end{question}
+
+% Question 4 solution.
+\begin{proof}[Solution]
+    Suppose that there exists a \(3\times3\) matrix \(A\in\R^{3\times3}\) such that
+    \begin{align*}
+        \det(B) &= \det(AA^T) \\
+        &= \det(A)\det(A^T)
+    \end{align*}
+    and since \(\det(A)=\det(A^T)\) then we have
+    \begin{align*}
+        \det(B) &= \det(A)\det(A) \\
+        &= (\det(A))^2
+    \end{align*}
+    We use cofactor expansion along row \(1\) to compute \(\det(B)\)
+    \begin{align*}
+        \det(B) 
+        &= 9 \begin{vmatrix}
+            3 & 4 \\
+            4 & 2
+          \end{vmatrix}
+        - 5 \begin{vmatrix}
+            5 & 4 \\
+            2 & 2
+          \end{vmatrix}
+        + 2 \begin{vmatrix}
+            5 & 3 \\
+            2 & 4
+          \end{vmatrix} \\
+        &= 9[3\times2-4\times4] - 5[5\times2-4\times2] + 2[5\times4 - 3\times2] \\
+        &= 9(-10) - 5(2) + 2(14) \\
+        &= -72
+    \end{align*}
+    If \(A\in\R^{3\times3}\) then \(\det(A)\in\R\) so that \((\det(A))^2\geq0\).
+    However, \((\det(A))^2 = \det(B) = -72\) and this is a contradiction.
+    Therefore, it is proved that there does not exist a \(3\times3\) matrix
+    \(A\in\R^{3\times3}\) such that \(B=AA^T\).
+\end{proof}
+
+
+\end{document}

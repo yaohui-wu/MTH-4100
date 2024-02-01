@@ -1,0 +1,474 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{lastpage}
+\usepackage{hyperref}
+
+\renewcommand\qedsymbol{QED}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\curs}{\mathcal}
+\renewcommand{\u}{{\bf u}}
+\renewcommand{\v}{{\bf v}}
+\newcommand{\w}{{\bf w}}
+\newcommand{\x}{{\bf x}}
+\renewcommand{\b}{{\bf b}}
+\newcommand{\dsum}{\displaystyle \sum}
+\newcommand{\dint}{\displaystyle \int}
+\newcommand{\tr}{\textcolor{red}}
+\newcommand{\tb}{\textcolor{blue}}
+\newcommand{\tv}{\textcolor{violet}}
+\newcommand{\tm}{\textcolor{magenta}}
+\newcommand{\tor}{\textcolor{orange}}
+
+\newcommand{\too}{\xrightarrow{\hspace*{1.5cm}}}
+\newcommand{\zero}{\mbox{\large $\overrightarrow{\mathbf{0}}$}}
+
+\newcommand{\lp}{\left(}
+\newcommand{\rp}{\right)}
+
+\theoremstyle{definition}
+\newtheorem{question}{Question}
+
+\pagestyle{fancy}
+
+\fancyfoot{}
+
+\lhead{\small Math 4100 PMWA Homework 1}
+\chead{\small Fall Semester 2023}
+\rhead{\small Page \thepage \ of \pageref{LastPage}}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+
+\noindent {\bf \Large Math 4100 Homework $\mathbf{\#1}$} \hfill {\bf \large Name: Yaohui Wu}
+
+\vspace{1cm}
+
+\noindent {\Large \bf Instructions:} Show {\bf ALL} of your work! Explain your reasoning using complete sentences and correct grammar, spelling, and punctuation. Course notes, textbooks, etc. are allowed. 
+
+\vspace{.25cm}
+
+\noindent This is due at {\bf 5:00 PM on Friday, October 13}!
+
+\vspace{.25cm}
+
+\noindent You may use LaTeX to type the answers. If you use Latex, upload your .tex file along with the PDF output.
+
+\vspace{.25cm}
+
+\noindent If you choose not to use LaTeX, write your answers {\bf legibly} on perforated paper or loose leaf paper. 
+
+\vspace{.25cm}
+
+\noindent You {\bf \large MUST} attach this sheet as the first page of your solutions.
+
+\vspace{.25cm}
+
+\noindent Put your EMPLID on each page.
+
+\vspace{.25cm}
+
+\noindent {\bf Solutions MUST be in the proper numerical order!} You must make a PDF scan of your work (include the cover page as the first page) as a single PDF file.
+
+\vspace{.25cm}
+
+\noindent The work {\bf must} be submitted on Dropbox: \href{https://www.dropbox.com/request/QPyB46xQsp5l8xoZtk7v}{https://www.dropbox.com/request/QPyB46xQsp5l8xoZtk7v}
+
+\vspace{.25cm}
+
+\noindent If you use any resources other than your textbook, {\bf cite the source!}
+
+\vspace{.25cm}
+
+\noindent {\bf Justify your answers!}
+
+\vspace{1.5cm}
+
+
+
+\begin{center}
+
+{\renewcommand{\arraystretch}{2.5}
+\begin{tabular}{|c|c|c|}
+\hline
+Question & \ Possible Points \ & \ \ \ Score \ \ \ \\
+\hline 
+
+1 & 4 & \\
+\hline 
+
+2 & 4 & \\
+\hline
+
+3 & 6 & \\
+\hline
+
+4 & 6 & \\
+\hline 
+
+Total & 20 & \\
+\hline
+
+\end{tabular}}
+
+\end{center}
+
+
+\newpage \label{Question 1}
+
+
+%Question 1
+
+\begin{question} For each of the following statements, prove the statement (showing all steps), or find a counterexample.
+
+\vspace{.25cm}
+
+\begin{enumerate}
+
+\item[{\bf (a)}] Let $\F$ be a field. If $a,b,c \in \F$ satisfy $ac = bc$, then $a = b$.
+
+% Question 1 (a) solution.
+Solution:
+\begin{proof}
+    Counterexample: Suppose \(\F = \R\), \(a \neq b, a \neq 0, b \neq 0, c = 0\). \\ Then \(ac = 0\) and \(bc = 0\). \\ Therefore, it is proved that \(ac = bc\) and \( a\neq b\).
+\end{proof}
+
+\vspace{.25cm}
+
+\item[{\bf (b)}] Let $\F$ be a field. If $a,b \in \F$ are both non-zero, then $(ab)^{-1} = a^{-1}b^{-1}$.
+
+% Qustion 1 (b) solution.
+Solution:
+\begin{proof}
+    Suppose \(aa^{-1}=1\) with \(a^{-1}\in\F\), \(bb^{-1}=1\) with \(b^{-1}\in\F\), and \(ab(ab)^{-1}=1\) with \((ab)^{-1}\in\F\) by the definition of multiplicative inverses. \\ We have \(a^{-1}ab(ab)^{-1}=a^{-1}\) and then \(b(ab)^{-1}=a^{-1}\). \\ Then we have \((ab)^{-1}b=a^{-1}\) by the commutativity of multiplication in \(\F\) so that we have \((ab)^{-1}bb^{-1}=a^{-1}b^{-1}\). \\ Therefore, it is proved that \((ab)^{-1}=a^{-1}b^{-1}\).
+\end{proof}
+
+\vspace{.25cm}
+
+\item[{\bf (c)}] Suppose that $A$, $B$, and $C$ are matrices such that both $AB = BA$ and $AC = CA$. Then, $A(B+C) = (B+C)A$.
+
+% Question 1 (c) solution.
+Solution:
+\begin{proof}
+    We have \(A(B+C) = AB + AC\) by the distributive property. \\ Since \(AB=BA\) and \(AC=CA\), then \(A(B+C)= BA + CA\). \\ We also have \((B+C)A = BA + CA\) by the distributive property. \\ Therefore, it is proved that \(A(B+C) = (B+C)A\).
+\end{proof}
+
+\vspace{.25cm}
+
+\item[{\bf (d)}] Suppose that $A$, $B$, and $C$ are non-zero matrices such that $AB = AC$. Then, $B = C$.
+
+% Question 1 (d) solution.
+Solution:
+\begin{proof}
+    Counterexample: Suppose \(AA^{-1}=I\), if \(AB=AC\), then \(A^{-1}AB=A^{-1}AC\). \\
+    Then we have \(IB=IC\) so \(B=C\) if and only if \(A\) is invertible or \(A^{-1}\) exists but it is possible that \(A\) is non-invertible or \(A^{-1}\) does not exist. \\
+    Consider a 2\(\times\)2 matrix \(A\):
+    \[A=\begin{bmatrix}
+      a & b \\
+      c & d
+    \end{bmatrix}\]
+    \(A\) is invertible if and only if \(ad-bc\neq0\). \\
+    Let \(A\) be the following non-zero 2\(\times\)2 matrix:
+    \(A=\begin{bmatrix}
+      1 & 0 \\
+      0 & 0
+    \end{bmatrix}\)
+    \[ad-bc=1(0)-(0)(0)=0\]
+    Thus, \(A^{-1}\) does not exist. \\
+    Let \(B\) and \(C\) be the following non-zero 2\(\times\)2 matrices:
+    \(B=\begin{bmatrix}
+      0 & 1 \\
+      0 & 0
+    \end{bmatrix}\) and
+    \(C=\begin{bmatrix}
+      0 & 1 \\
+      1 & 0
+    \end{bmatrix}\)
+    so that
+    \(AB=\begin{bmatrix}
+      0 & 1 \\
+      0 & 0
+    \end{bmatrix}\) and
+    \(AC=\begin{bmatrix}
+      0 & 1 \\
+      0 & 0
+    \end{bmatrix}\). \\
+    Therefore, it is proved that \(AB=AC\) and \(B\neq C\).
+\end{proof}
+
+
+
+\end{enumerate}
+
+\end{question}
+
+
+
+
+
+\vspace{.75cm}
+
+\label{Question 2}
+
+
+%Question 2
+
+\begin{question} Let $V$ be a vector space over $\R$. Suppose that $\u, \v, \w \in V$ satisfy $a\u + b\v + c\w = \zero$ if and only if $a = b = c = 0$.
+
+\vspace{.25cm}
+
+\noindent Let $\v_1 = \u+3\v$, $\v_2 = 2\v - 5\w$, and $\v_3 = 3\u - \v + 5\w$. Suppose that $a_1\v_1 + a_2\v_2 + a_3\v_3 = \zero$. Prove that $a_1 = a_2 = a_3 = 0$, or find non-zero values for $a_1$, $a_2$, and $a_3$ such that the equation holds.
+
+\vspace{.25cm}
+
+\noindent {\bf Hint:} Rewrite the equation in the form $a\u + b\v + c\w = \zero$.
+
+\end{question}
+
+%Question 2 solution.
+Solution:
+\begin{proof}
+\begin{align*}
+    a_1(\u+3\v)+a_2(2\v-5\w)+a_3(3\u-\v+5\w)&=\zero \\
+    a_1\u+3a_1\v+2a_2\v-5a_2\w+3a_3\u-a_3\v+5a_3\w&=\zero \\
+    (a_1+3a_3)\u+(3a_1+2a_2-a_3)\v+(-5a_2+5a_3)\w&=\zero
+\end{align*}
+Now we have the system of equations:
+\[\begin{array}{ccccccc}
+    a_1 &  &  & + & 3a_3 & = & 0 \\
+    3a_1 & + & 2a_2 & - & a_3 & = & 0 \\
+     &  & -5a_2 & + & 5a_3 & = &0 \\
+\end{array}\]
+Then we have the augmented matrix \(A\):
+\[\left[
+\begin{array}{ccc|c}
+    1 & 0 & 3 & 0 \\
+    3 & 2 & -1 & 0 \\
+    0 & -5 & 5 & 0 \\
+\end{array}
+\right]\]
+\[R_2-3R_1\]
+\[\left[
+\begin{array}{ccc|c}
+    1 & 0 & 3 & 0 \\
+    0 & 2 & -10 & 0 \\
+    0 & -5 & 5 & 0 \\
+\end{array}
+\right]\]
+\[\frac{1}{2}R_2\]
+\[\left[
+\begin{array}{ccc|c}
+    1 & 0 & 3 & 0 \\
+    0 & 1 & -5 & 0 \\
+    0 & -5 & 5 & 0 \\
+\end{array}
+\right]\]
+\[R_3+5R_2\]
+\[\left[
+\begin{array}{ccc|c}
+    1 & 0 & 3 & 0 \\
+    0 & 1 & -5 & 0 \\
+    0 & 0 & -20 & 0 \\
+\end{array}
+\right]\]
+\[-\frac{1}{20}R_3\]
+\[\left[
+\begin{array}{ccc|c}
+    1 & 0 & 3 & 0 \\
+    0 & 1 & -5 & 0 \\
+    0 & 0 & 1 & 0 \\
+\end{array}
+\right]\]
+\[R_1-3R_3, R_2+5R_3\]
+\[\left[
+\begin{array}{ccc|c}
+    1 & 0 & 0 & 0 \\
+    0 & 1 & 0 & 0 \\
+    0 & 0 & 1 & 0 \\
+\end{array}
+\right]\]
+The matrix \(A\) is now in reduced row echelon form and the solution to the system is:
+\begin{align*}
+    a_1=0 \\
+    a_2=0 \\
+    a_3=0
+\end{align*}
+Therefore, it is proved that \(a_1 = a_2 = a_3 = 0\).
+\end{proof}
+
+
+\vspace{.75cm}
+
+\label{Question 3}
+
+
+%Question 3
+
+\begin{question} Let $a,b,c\in \R$. Consider the following questions about systems of linear equations (over $\R$):
+
+
+\[\begin{array}{rcrcrcrcl} 5x_1 & - & 13x_2 & + & 14x_3 & + & 27x_4 & = & a \\ x_1 & - & 3x_2 & + & 4x_3 & + & 7x_4 & = & b \\ 11x_1 & - & 19x_2 & + & 2x_3 & + & 21x_4 & = & c \end{array}\]
+
+\vspace{.25cm}
+
+\begin{enumerate}
+
+\item[{\bf (a)}] Find a vector $(a,b,c)$ with non-zero values of $a$, $b$, and $c$ such that the system is inconsistent.
+
+% Question 3 (a) solution.
+Solution: We have the following 3 \(\times\) 4 augmented matrix A:
+\[\left[
+\begin{array}{cccc|c}
+    5 & -13 & 14 & 27 & a \\
+    1 & -3 & 4 & 7 & b \\
+    11 & -19 & 2 & 21 & c \\
+\end{array}
+\right]\]
+\[R_1 - 4R_2\]
+\[\left[
+\begin{array}{cccc|c}
+    1 & -1 & -2 & -1 & a-4b \\
+    1 & -3 & 4 & 7 & b \\
+    11 & -19 & 2 & 21 & c \\
+\end{array}
+\right]\]
+\[R_2-R_1, R_3-11R_1\]
+\[\left[
+\begin{array}{cccc|c}
+    1 & -1 & -2 & -1 & a-4b \\
+    0 & -2 & 6 & 8 & -a+5b \\
+    0 & -8 & 24 & 32 & -11a+44b+c \\
+\end{array}
+\right]\]
+\[-\frac{1}{2}R_2\]
+\[\left[
+\begin{array}{cccc|c}
+    1 & -1 & -2 & -1 & a-4b \\
+    0 & 1 & -3 & -4 & \frac{a}{2} - \frac{5b}{2} \\
+    0 & -8 & 24 & 32 & -11a+44b+c \\
+\end{array}
+\right]\]
+\[R_3+8R_2\]
+\[\left[
+\begin{array}{cccc|c}
+    1 & -1 & -2 & -1 & a-4b \\
+    0 & 1 & -3 & -4 & \frac{a}{2} - \frac{5b}{2} \\
+    0 & 0 & 0 & 0 & -7a+24b-c \\
+\end{array}
+\right]\]
+Now \(A\) is in row echelon form and it is inconsistent when \(-7a+24b-c\neq0\). \\
+Let \(a=1\), \(b=1\), and \(c=1\), then we have \(-7(1)+24(1)-1=16\). \\ Since \(16\neq0\) so the system is inconsistent with vector \((1,1,1)\).\qed
+
+\vspace{.25cm}
+
+\item[{\bf (b)}] If $a = 23$ and $c = 41$, find all values of $b$ such that the system of equations is consistent. For these values of $b$, describe the set of all solutions.  If there are infinitely many solutions, use $s$ and $t$ for the free variable and write all answers in terms of the free variables $s$ and $t$ (use $s$ for the first free variable from left to right).
+
+% Question 3 (b) solution.
+Solution: The system is consistent if \(-7(23)+24b-41=0\) so \(b=5\). \\ Then we have the following augmented matrix A:
+\[\left[
+\begin{array}{cccc|c}
+    1 & -1 & -2 & -1 & 3 \\
+    0 & 1 & -3 & -4 & -1 \\
+    0 & 0 & 0 & 0 & 0 \\
+\end{array}
+\right]\]
+\[R_1+R_2\]
+\[\left[
+\begin{array}{cccc|c}
+    1 & 0 & -5 & -5 & 2 \\
+    0 & 1 & -3 & -4 & -1 \\
+    0 & 0 & 0 & 0 & 0 \\
+\end{array}
+\right]\]
+Now \(A\) is in reduced row echelon form and we have the following system of equations:
+\[\begin{array}{ccccccccc}
+    x_1 &  &  & - & 5x_3 & - & 5x_4 & = & 2 \\
+    &  & x_2 & - & 4x_3 & - & 4x_4 & = & -1 \\
+\end{array}\]
+After solving for \(x_1\) and \(x_2\), we have the set of solutions to the system:
+\[\begin{array}{ccccccc}
+    x_1 & = & 2 & + & 5x_3 & + & 5x_4 \\
+    x_2 & = & -1 & + & 4x_3 & + & 4x_4\\
+\end{array}\]
+Let \(x_3 = s\) and \(x_4=t\) where \(s\), \(t \in \R\). The set of solutions to the system is:
+\[\begin{array}{ccccccc}
+    x_1 & = & 2 & + & 5s & + & 5t \\
+    x_2 & = & -1 & + & 4s & + & 4t
+\end{array}\] \qed
+\end{enumerate}
+
+\end{question}
+
+
+
+
+
+\vspace{.75cm}
+
+\label{Question 4}
+
+%Question 4
+
+\begin{question} Let \(x,y\in\R\). Suppose that $A$ is a $2\times 2$ matrix given by $A = \renewcommand{\arraystretch}{1.5} \left[\begin{array}{cc} x & 3 \\ 2 & y \end{array}\right]$. Find the values of \(x\) and \(y\) if \[A^2 = \renewcommand{\arraystretch}{1.5} \left[\begin{array}{cc} 5x & -12 \\ -8 & -7y \end{array}\right]\]
+
+\end{question}
+
+% Question 4 solution.
+Solution:
+\[A^2 = 
+\begin{bmatrix}
+  x & 3 \\
+  2 & y
+\end{bmatrix}
+\begin{bmatrix}
+  x & 3 \\
+  2 & y
+\end{bmatrix}=
+\begin{bmatrix}
+  x^2+6 & 3x+3y \\
+  2x+2y & y^2+6
+\end{bmatrix}\]
+We have the system of equations:
+\begin{align*}
+    x^2+6&=5x \\
+    3x+3y&=-12 \\
+    2x+2y&=-8 \\
+    y^2+6&=-7y
+\end{align*}
+First we simplify the system and we get:
+\begin{align*}
+    x^2+6&=5x \\
+    x+y&=-4 \\
+    y^2+6&=-7y
+\end{align*}
+Then we solve for \(x\) and we get:
+\begin{align*}
+    x^2+6&=5x \\
+    x^2-5x+6&=0 \\
+    (x-2)(x-3)&=0 \\
+\end{align*}
+so \(x=2\) or \(x=3\).
+Then we solve for \(y\) and we get:
+\begin{align*}
+    y^2+6&=-7y \\
+    y^2+7y+6&=0 \\
+    (y+1)(y+6)&=0 \\
+\end{align*}
+so \(y=-1\) or \(y=-6\). \\
+Then we substitute values of \(x\) and \(y\) to check if it satisfies \(x+y=-4\).\\
+It is obvious that \(x=2\) and \(y=-6\) is the solution. \qed
+
+\end{document}
